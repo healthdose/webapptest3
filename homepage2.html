@@ -1,17 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <script type="text/javascript">
-          var _gaq = _gaq || [];
-          _gaq.push(['_setAccount', 'UA-110574546-1']);
-          _gaq.push(['_gat._anonymizeIp']);
-         (function() {
-           var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-           ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-           var s = document.getElementsByTagName('script')[0];
-           s.parentNode.insertBefore(ga, s);
-          })();
-        </script>  
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-110574546-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-110574546-1');
+</script>
 
         <meta charset="utf-8">
         <meta name="description" content="Home Page Redesign 2">
@@ -963,22 +961,30 @@
       <script src="js/main.js"></script>
 
       <script type="text/javascript">
-        $('[data-role="page"]').live('pageshow', function (event, ui) {
-          try {
-            _gaq.push(['_setAccount', 'UA-110574546-1']);
-        
-            hash = location.hash;
-        
-            if (hash) {
-              _gaq.push(['_trackPageview', hash.substr(1)]);
-            } else {
-              _gaq.push(['_trackPageview']);
-            }
-          } catch(err) {
-  
-          }
-  
-        });
+          var _gaq = _gaq || [];
+          
+            $(document).ready(function(e) {
+              (function() {
+                var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+                ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + 
+                            '.google-analytics.com/ga.js';
+                var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+              })();
+              }); 
+          
+            $('[data-role=page]').live('pageshow', function (event, ui) {
+              try {
+                _gaq.push(['_setAccount', 'UA-110574546-1']);
+            
+                if ($.mobile.activePage.attr("data-url")) {
+                  _gaq.push(['_trackPageview', $.mobile.activePage.attr("data-url")]);
+                } else {
+                  _gaq.push(['_trackPageview']);
+                }
+              } catch(err) {}
+            
+            });
+          
         </script>
 
     </body>
