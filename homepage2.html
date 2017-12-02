@@ -1,0 +1,955 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>      
+
+        <meta charset="utf-8">
+        <meta name="description" content="Home Page Redesign 2">
+        <meta name="author" content="Henry Zhou and Sunyue Lin">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <!-- http://jquerymobile.com/download/ -->
+        <link rel="stylesheet" href="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css"/>
+
+        <title>Recipes for aging-related health issues</title>
+        <link href="css/style.css" type="text/css" rel="stylesheet"/>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    </head>
+    <body>
+      <!-- http://demos.jquerymobile.com/1.4.0/pages/ -->
+      <!-- Login Page -->
+      <div data-role="page" id="login-page">
+          <div role="main" class="ui-content">
+            <div class="login-container">
+              <div class="brand-logo">
+                <h1></h1> <!-- app name -->
+              </div>
+  
+              <div class="login-input">
+                <form>
+                  Username: <input type="text" name="user"> <br>
+                  Password: <input type="password" name="pass">
+                </form>
+  
+                <a href="#landing-page" class="ui-btn ui-corner-all login-btn">LOG IN</a>
+              </div>
+  
+            </div>
+          </div>
+        </div>
+
+      <!-- Landing Page REDESIGN REDESIGN REDESIGN REDESIGN REDESIGN REDESIGN REDESIGN REDESIGN REDESIGN REDESIGN -->
+      <div data-role="page" id="landing-page">
+        <div role="main" class="ui-content">
+          <div class="welcome-container">
+            <div class="landing-pic-container">
+              <a id="landing-pic" href="#profile-page"><img src="img/profilepic.png"></a>
+            </div>
+
+            <h1 id="welcome-text"></h1>
+
+            <a class="ui-btn create-profile-btn" href="#profile-page">Create Profile</a>
+            <br>
+            <!--<h3><a href="index.html#profile-page" rel="external">Create Profile</a></h3>-->
+            
+            <h3 class="view-recipes-redesign" id="go-to-recipes"><a href="#recipes-page">Go to Recipes</a></h3>
+          </div>
+        </div>
+      </div>
+      <!-- REDESIGN REDESIGN REDESIGN REDESIGN REDESIGN REDESIGN REDESIGN REDESIGN REDESIGN REDESIGN REDESIGN -->
+
+     <!-- Profile Page -->
+     <div data-role="page" id="profile-page">
+        <div class="profile-nav">
+          <a class="profile-home-btn" href="#landing-page"><i class="fa fa-angle-left"></i> Back to Home</a>
+          <a class="profile-browse-btn" href="#recipes-page">Continue to Recipes <i class="fa fa-angle-right"></i></a>
+        </div>  
+
+        <div class="profile-header">
+          <a id="profile-header-pic" href="#profile-page"><img src="img/profilepic.png"></a>
+        </div>
+        
+        <div class="profile-content">
+          <div class="profile-about">
+            <h2 id="profile-name"></h2>
+            <h4 id="profile-gender-age"></h4>
+          </div>
+          
+          <!-- Form for user to enter information -->
+          <div class="profile-form">
+            <a href="#popupEdit" data-rel="popup" class="ui-btn ui-corner-all ui-shadow ui-btn-inline" data-transition="pop">Edit Profile</a>
+            <div class="edit-profile-container" data-role="popup" id="popupEdit">
+            <a href="#" data-rel="back" data-role="button" data-theme="a" data-icon="delete" data-iconpos="notext" class="ui-btn-right"></a>
+              <Form>
+                <input id="name-textField" type="text" placeholder="Name">
+                <select id="gender-dropdown">
+                  <option value="M">M</option>
+                  <option value="F">F</option>
+                  <option value="Other">Other</option>
+                </select>
+                <input id="age-textField" type="number" placeholder="Age">
+                <input id="height-textField" type="number" placeholder="Height">
+                <input id="weight-textField" type="number" placeholder="Weight">
+                <input id="allergy-textField" type="text" placeholder="Food Allergy ex: Egg, Milk...">
+                <input id="health-concern-textField" type="text" placeholder="Health Concern ex: Diabetes, Heart disease, High Blood Pressure...">
+                <input id="form-submit-button" type="button" value="Submit">
+              </Form>
+            </div>        
+          </div>
+          <!-- End -->
+
+          <div class="profile-info-container">
+            <h3>Profile Details</h3>
+
+            <h5>Name:</h5> <h5 id="detail-name"></h5> <br>
+            <h5>Height:</h5> <h5 id="detail-height"></h5> <br>
+            <h5>Weight:</h5> <h5 id="detail-weight"></h5> <br>
+            <h5>Food Allergy:</h5> <h5 id="detail-allergy"></h5> <br>
+            <h5>Current Health Concern(s):</h5> <h5 id="detail-health-concern"></h5>
+          </div>
+        </div>
+      </div>
+
+      <!-- New Recipes Page -->
+      <div data-role="page" id="recipes-page">
+        <!-- Sidebar Navigation -->
+        <div class="sidebar">
+            
+          <div class="profile">
+            <a id="profile-pic" href="#profile-page"><img src="img/profilepic.png"></a>
+          </div>
+            
+          <ul>
+            <li><a href="#landing-page"><i class="fa fa-home"></i> Home</a></li>
+            <li><a href="#profile-page"><i class="fa fa-user"></i> Your Profile</a></li>
+
+            <li id="logout-btn"><a href="#login-page"><i class="fa fa-sign-out"></i> Logout</a></li>
+          </ul>
+            
+          <div class="sidebar-btn">
+            <span class="btn"></span>
+            <span class="btn"></span>
+            <span class="btn"></span>
+          </div>
+        </div>
+
+        <header class="recipe-header">
+          <h1>Recipes</h1>
+        </header>
+
+        <!-- Recipe Selections -->
+        <div class="showrecipe-container recipe-box-one" title="Heart Disease">
+          <div class="recipe-description">
+            <a id="recipeone" href="#"><img src="img/hymb.png"></a>
+
+            <h3>Honeyed Yogurt & Mixed Berries & Whole-Grain Waffles</h3>
+            <p>Recipe for Heart Health </p>
+
+            <a class="view-recipe" href="#hymb-page">View Recipe <i class="fa fa-angle-double-right"></i></a>
+
+          </div>
+
+        </div>
+
+        <div class="showrecipe-container recipe-box-two" title="Heart Disease">
+          <div class="recipe-description">
+            <a id="recipeone" href="#"><img src="img/bfs.png"></a>
+    
+            <h3>Baked Falafel Sandwiches with Yogurt-Tahini Sauce</h3>
+            <p>Recipe for Heart Health </p>
+
+            <a class="view-recipe" href="#bfs-page">View Recipe <i class="fa fa-angle-double-right"></i></a>
+    
+          </div>
+            
+        </div>
+
+        <div class="showrecipe-container recipe-box-three" title="Heart Disease">
+          <div class="recipe-description">
+            <a id="recipeone" href="#"><img src="img/bep.png"></a>
+        
+            <h3>Black-Eyed Peas and Greens</h3>
+            <p>Recipe for Heart Health </p>
+
+            <a class="view-recipe" href="#bep-page">View Recipe <i class="fa fa-angle-double-right"></i></a>
+        
+          </div>
+            
+        </div>
+
+        <div class="showrecipe-container recipe-box-four" title="Heart Disease">
+          <div class="recipe-description">
+            <a id="recipeone" href="#"><img src="img/gscp.png"></a>
+            
+            <h3>Greek Slaw and Chicken Pitas</h3>
+            <p>Recipe for Heart Health </p>
+
+            <a class="view-recipe" href="#gscp-page">View Recipe <i class="fa fa-angle-double-right"></i></a>
+            
+          </div>
+                
+        </div>
+
+        <div class="showrecipe-container recipe-box-five" title="Heart Disease">
+          <div class="recipe-description">
+            <a id="recipeone" href="#"><img src="img/gsrc.png"></a>
+            
+            <h3>Garlic-Sage Roasted Chicken Caesar Salad</h3>
+            <p>Recipe for Heart Health </p>
+
+            <a class="view-recipe" href="#gsrc-page">View Recipe <i class="fa fa-angle-double-right"></i></a>
+            
+          </div>
+                
+        </div>
+
+        <div class="showrecipe-container recipe-box-five" title="Diabetes">
+          <div class="recipe-description">
+            <a id="recipeone" href="#"><img src="img/hhm.png"></a>
+              
+            <h3>Half and Half Muffins</h3>
+            <p>Recipe for Diabetes </p>
+  
+            <a class="view-recipe" href="#hhm-page">View Recipe <i class="fa fa-angle-double-right"></i></a>
+              
+          </div>
+                  
+        </div>
+
+        <div class="showrecipe-container recipe-box-five" title="Diabetes">
+          <div class="recipe-description">
+            <a id="recipeone" href="#"><img src="img/mbb.png"></a>
+              
+            <h3>Mexican Breakfast Burrito</h3>
+            <p>Recipe for Diabetes </p>
+  
+            <a class="view-recipe" href="#mbb-page">View Recipe <i class="fa fa-angle-double-right"></i></a>
+              
+          </div>
+                  
+        </div>
+
+        <div class="showrecipe-container recipe-box-five" title="Diabetes">
+          <div class="recipe-description">
+            <a id="recipeone" href="#"><img src="img/se.png"></a>
+                  
+            <h3>BMT Scrambled Eggs</h3>
+            <p>Recipe for Diabetes </p>
+      
+            <a class="view-recipe" href="#se-page">View Recipe <i class="fa fa-angle-double-right"></i></a>
+                  
+          </div>
+                      
+        </div>
+  
+        <div class="showrecipe-container recipe-box-five" title="Diabetes">
+          <div class="recipe-description">
+            <a id="recipeone" href="#"><img src="img/sbt.png"></a>
+                
+            <h3>Southwestern Breakfast Tostadas</h3>
+            <p>Recipe for Diabetes </p>
+    
+            <a class="view-recipe" href="#sbt-page">View Recipe <i class="fa fa-angle-double-right"></i></a>
+                
+          </div>
+                    
+        </div>
+
+        <div class="showrecipe-container recipe-box-five" title="Diabetes">
+          <div class="recipe-description">
+            <a id="recipeone" href="#"><img src="img/re.png"></a>
+                  
+            <h3>Ranch Eggs</h3>
+            <p>Recipe for Diabetes </p>
+      
+            <a class="view-recipe" href="#re-page">View Recipe <i class="fa fa-angle-double-right"></i></a>
+                  
+          </div>
+                      
+        </div>
+
+        <div class="showrecipe-container recipe-box-five" title="High Blood Pressure">
+          <div class="recipe-description">
+            <a id="recipeone" href="#"><img src="img/pps.png"></a>
+                    
+            <h3>Pumpkin Pie Smoothie</h3>
+            <p>Recipe for High Blood Pressure </p>
+        
+            <a class="view-recipe" href="#pps-page">View Recipe <i class="fa fa-angle-double-right"></i></a>
+                    
+          </div>
+                        
+        </div>
+
+        <div class="showrecipe-container recipe-box-five" title="High Blood Pressure">
+          <div class="recipe-description">
+            <a id="recipeone" href="#"><img src="img/bas.png"></a>
+                    
+            <h3>Berry-Almond Smoothie Bowl</h3>
+            <p>Recipe for High Blood Pressure </p>
+        
+            <a class="view-recipe" href="#bas-page">View Recipe <i class="fa fa-angle-double-right"></i></a>
+                    
+          </div>
+                        
+        </div>
+
+        <div class="showrecipe-container recipe-box-five" title="High Blood Pressure">
+          <div class="recipe-description">
+            <a id="recipeone" href="#"><img src="img/mgs.png"></a>
+                      
+            <h3>Mango-Ginger Smoothie</h3>
+            <p>Recipe for High Blood Pressure </p>
+          
+            <a class="view-recipe" href="#mgs-page">View Recipe <i class="fa fa-angle-double-right"></i></a>
+                      
+          </div>
+                          
+        </div>
+
+        <div class="showrecipe-container recipe-box-five" title="High Blood Pressure">
+          <div class="recipe-description">
+            <a id="recipeone" href="#"><img src="img/mgl.png"></a>
+                        
+            <h3>Mixed Greens with Lentils & Sliced Apple</h3>
+            <p>Recipe for High Blood Pressure </p>
+            
+            <a class="view-recipe" href="#mgl-page">View Recipe <i class="fa fa-angle-double-right"></i></a>
+                        
+          </div>
+                            
+        </div>
+
+        <div class="showrecipe-container recipe-box-five" title="High Blood Pressure">
+          <div class="recipe-description">
+            <a id="recipeone" href="#"><img src="img/cqb.png"></a>
+                          
+            <h3>Chickpea & Quinoa Buddha Bowl</h3>
+            <p>Recipe for High Blood Pressure </p>
+              
+            <a class="view-recipe" href="#cqb-page">View Recipe <i class="fa fa-angle-double-right"></i></a>
+                          
+          </div>
+                              
+        </div>
+
+      </div>
+
+      <!-- Recipe Instructions Page -->
+      <div data-role="page" id="hymb-page">
+        <a class="back-btn" href="#recipes-page"><i class="fa fa-angle-left"></i></a>
+
+        <header class="instruction-header">
+          <h1>Honeyed Yogurt & Mixed Berries with Whole-Grain Waffles</h1>
+        </header>
+
+        <div class="instruction-section">
+          <div class="ingredients-container">
+            <h3>Ingredients:</h3>
+            <ul>
+              <li>2 cups vanilla lowfat yogurt</li>
+              <li>2 tablespoons honey</li>
+              <li>2 cups fresh raspberries</li>
+              <li>1 cup quartered small strawberries</li>
+              <li>1 cup fresh blackberries</li>
+              <li>1/3 cup sugar</li>
+              <li>2 tablespoons fresh lemon juice</li>
+              <li>4 frozen whole-grain waffles, toasted</li>
+              <li>4 teaspoons toasted wheat germ</li>
+            </ul>
+          </div>
+
+          <div class="instructions-container">
+            <h3>Instructions:</h3>
+            <p><h4>Step 1</h4>
+              Drain yogurt in a fine sieve or colander lined with cheesecloth for 10 minutes; spoon into a bowl. Add honey, stirring to combine.
+               <h4>Step 2</h4>
+              Combine berries, sugar, and juice; let stand 5 minutes. Place 1 waffle on each of 4 plates; top each serving with 1 cup fruit mixture, 
+              about 1/3 cup yogurt mixture, and 1 teaspoon wheat germ. Serve immediately.
+            </p>
+          </div>
+        </div>
+
+      </div>
+
+      <div data-role="page" id="bfs-page">
+        <a class="back-btn" href="#recipes-page"><i class="fa fa-angle-left"></i></a>
+  
+        <header class="instruction-header">
+          <h1>Baked Falafel Sandwiches with Yogurt-Tahini Sauce</h1>
+        </header>
+  
+        <div class="instruction-section">
+          <div class="ingredients-container">
+            <h3>Ingredients:</h3>
+            <ul>
+              <li>1 cup plain whole-milk Greek yogurt</li>
+              <li>1 tablespoon tahini (sesame-seed paste)</li>
+              <li>1 tablespoon fresh lemon juice</li>
+              <li>3/4 cup water</li>
+              <li>1/4 cup uncooked bulgur</li>
+              <li>3 cups cooked chickpeas</li>
+              <li>1/2 cup chopped fresh cilantro</li>
+              <li>1/2 cup chopped green onions</li>
+              <li>1/3 to 1/2 cup water</li>
+              <li>2 tablespoons all-purpose flour</li>
+              <li>1 tablespoon ground cumin</li>
+              <li>1 teaspoon baking powder</li>
+              <li>3/4 teaspoon salt</li>
+              <li>1/4 to 1/2 teaspoon ground red pepper</li>
+              <li>3 garlic cloves</li>
+              <li>Cooking spray</li>
+              <li>6 (2.8-ounce) Mediterranean Style white flatbreads</li>
+              <li>12 (1/4-inch-thick) slices tomato</li>
+              <li>Chopped fresh cilantro </li>
+            </ul>
+          </div>
+  
+          <div class="instructions-container">
+            <h3>Instructions:</h3>
+            <p><h4>Step 1</h4>
+                To prepare sauce, combine the first 3 ingredients, stirring with a whisk until blended. Cover and chill until ready to serve.
+                <h4>Step 2</h4>
+                To prepare falafel, bring 3/4 cup water to a boil in a small saucepan; add bulgur to pan. Remove from heat; cover and let stand 30 minutes or until tender. Drain and set aside.
+                <h4>Step 3</h4>
+                Preheat oven to 425°.
+                <h4>Step 4</h4>
+                Combine chickpeas and the next 9 ingredients (through garlic) in a food processor; pulse 10 times or until well blended and smooth (mixture will be wet). Spoon chickpea mixture into a large bowl; stir in bulgur.
+                <h4>Step 5</h4>
+                Divide mixture into 12 equal portions (about 1/4 cup each); shape each portion into a 1/4-inch-thick patty. Place patties on a baking sheet coated with cooking spray. Bake at 425° for 10 minutes on each side or 
+                until browned. Spread about 2 1/2 tablespoons sauce onto each flatbread. Top each flatbread with 2 falafel patties, 2 tomato slices, and chopped cilantro, if desired.
+            </p>
+          </div>
+        </div>
+  
+      </div>
+
+      <div data-role="page" id="bep-page">
+          <a class="back-btn" href="#recipes-page"><i class="fa fa-angle-left"></i></a>
+  
+          <header class="instruction-header">
+            <h1>Black-Eyed Peas and Greens</h1>
+          </header>
+  
+          <div class="instruction-section">
+            <div class="ingredients-container">
+              <h3>Ingredients:</h3>
+              <ul>
+                <li>2 slices smoked bacon</li>
+                <li>1/2 cup chopped onion</li>
+                <li>2 cups fat-free, lower-sodium chicken broth</li>
+                <li>2 cups water</li>
+                <li>1/2 teaspoon kosher salt</li>
+                <li>1/2 teaspoon freshly ground black pepper</li>
+                <li>1 (1-pound) bag frozen black-eyed peas, thawed</li>
+                <li>1 (12-ounce) bunch fresh turnip greens, trimmed and coarsely chopped</li>
+                <li>2 tablespoons pepper vinegar</li>
+              </ul>
+            </div>
+  
+            <div class="instructions-container">
+              <h3>Instructions:</h3>
+              <p><h4>Step 1</h4>
+                  Cook bacon in a Dutch oven over medium heat until crisp. Remove bacon from pan using a slotted spoon, reserving drippings in pan. Crumble bacon.
+                 <h4>Step 2</h4>
+                  Add onion to drippings in pan; sauté 4 minutes, stirring occasionally. Stir in broth and the next 5 ingredients (through greens); 
+                  bring to a boil. Reduce heat, and simmer for 55 minutes or until peas are tender, stirring occasionally and skimming as necessary. Stir in vinegar. Ladle about 1 1/3 cups pea mixture into each of 4 bowls; top evenly with crumbled bacon.
+                  
+              </p>
+            </div>
+          </div>
+  
+        </div>
+
+      <div data-role="page" id="gscp-page">
+        <a class="back-btn" href="#recipes-page"><i class="fa fa-angle-left"></i></a>
+
+        <header class="instruction-header">
+          <h1>Greek Slaw and Chicken Pitas</h1>
+        </header>
+
+        <div class="instruction-section">
+          <div class="ingredients-container">
+            <h3>Ingredients:</h3>
+            <ul>
+              <li>2 tablespoons fresh lemon juice</li>
+              <li>1 1/2 tablespoons canola oil</li>
+              <li>1/2 teaspoon freshly ground black pepper</li>
+              <li>1/4 teaspoon kosher salt</li>
+              <li>3 cups very thinly sliced green cabbage</li>
+              <li>1/2 cup thinly sliced green onions</li>
+              <li>2 ounces feta cheese, crumbled (about 1/2 cup)</li>
+              <li>8 ounces skinless, boneless rotisserie chicken breast, thinly sliced</li>
+              <li>4 ounces skinless, boneless rotisserie chicken thigh, thinly sliced</li>
+              <li>4 (6-inch) whole-wheat pitas, cut in half</li>
+            </ul>
+          </div>
+
+          <div class="instructions-container">
+            <h3>Instructions:</h3>
+            <p><h4>Step 1</h4>
+                Combine first 4 ingredients in a medium bowl, stirring well. Add cabbage, onions, and cheese; toss well to combine.
+                <h4>Step 2</h4>
+                Divide chicken evenly among pita halves; spoon about 1/2 cup slaw into each pita half.
+                
+            </p>
+          </div>
+        </div>
+
+      </div>
+
+      <div data-role="page" id="gsrc-page">
+        <a class="back-btn" href="#recipes-page"><i class="fa fa-angle-left"></i></a>
+  
+        <header class="instruction-header">
+          <h1>Garlic-Sage Roasted Chicken Caesar Salad</h1>
+        </header>
+  
+        <div class="instruction-section">
+          <div class="ingredients-container">
+            <h3>Ingredients:</h3>
+            <ul>
+              <li>Cooking spray</li>
+              <li>2 (3.5-pound) whole chickens</li>
+              <li>1 1/2 tablespoons olive oil</li>
+              <li>2 tablespoons minced fresh sage</li>
+              <li>1 tablespoon grated lemon rind</li>
+              <li>1 1/4 teaspoons freshly ground black pepper, divided</li>
+              <li>1 teaspoon kosher salt, divided</li>
+              <li>3 garlic cloves, minced</li>
+              <li>3/4 cup plus 2 tablespoons hot water, divided</li>
+              <li>2 tablespoons canola mayonnaise</li>
+              <li>1 tablespoon lemon juice</li>
+              <li>1/2 teaspoon anchovy paste</li>
+              <li>1/2 cup very thinly sliced radicchio</li>
+              <li>5 ounces fresh baby kale</li>
+              <li>1 ounce Parmesan cheese, shaved (about 1/4 cup)</li>
+            </ul>
+          </div>
+  
+          <div class="instructions-container">
+            <h3>Instructions:</h3>
+            <p><h4>Step 1</h4>
+                Preheat oven to 450°.
+                <h4>Step 2</h4>
+                Line a rimmed baking sheet with foil; place a wire rack on pan. Coat rack with cooking spray. Place 1 chicken, breast side down, on a cutting board. 
+                Using kitchen shears, cut along either side of backbone; discard bone. Turn chicken over; press down on the thighs and wings with the heel of your hand. 
+                Arrange chicken, breast side up, on rack. Repeat procedure with remaining chicken.
+                <h4>Step 3</h4>
+                Starting at the neck of 1 chicken, loosen skin from breasts and drumsticks by inserting fingers, gently pushing between skin and meat. Combine oil, sage, 
+                rind, 1/2 teaspoon pepper, 1/2 teaspoon salt, and garlic in a bowl. Rub sage mixture under loosened skin, over flesh. (Do not season other chicken.) Add 3/4
+                 cup water to pan. Bake chickens at 450° for 40 minutes or until a thermometer inserted into thickest part of thigh registers 165°. Let stand 10 minutes. Remove 
+                 skin from both chickens; discard skin. Sprinkle the unseasoned chicken with 1/2 teaspoon pepper and remaining 1/2 teaspoon salt. Carve both chickens. When cool, 
+                 shred the unseasoned chicken, keeping light and dark meat separate. Reserve shredded chicken for Recipes 2 and
+                <h4>Step 4</h4>
+                Combine remaining 1/4 teaspoon pepper, remaining 2 tablespoons hot water, mayonnaise, juice, and anchovy paste in a large bowl. Add radicchio and kale; toss. 
+                Sprinkle with Parmesan. Serve with garlic-sage chicken.
+                
+            </p>
+          </div>
+        </div>
+  
+      </div>
+
+      <div data-role="page" id="hhm-page">
+        <a class="back-btn" href="#recipes-page"><i class="fa fa-angle-left"></i></a>
+    
+        <header class="instruction-header">
+          <h1>Half and Half Muffins</h1>
+        </header>
+    
+        <div class="instruction-section">
+          <div class="ingredients-container">
+            <h3>Ingredients:</h3>
+            <ul>
+              <li>1 cup all-purpose flour</li>
+              <li>1 teaspoon baking soda</li>
+              <li>2 teaspoons baking powder</li>
+              <li>1/2 cup 60% to 70% vegetable oil spread </li>
+              <li>1/2 cup Sugar Blend</li>
+              <li>2 eggs</li>
+              <li>1/4 cup low-fat buttermilk</li>
+              <li>1/4 cup water</li>
+              <li>1/2 teaspoon vanilla</li>
+              <li>1/2 cup semisweet chocolate pieces, melted and cooled</li>
+              <li>2 tablespoons semisweet chocolate pieces (optional)</li>
+              <li>2 tablespoons white baking pieces (optional)</li>
+            </ul>
+          </div>
+    
+          <div class="instructions-container">
+            <h3>Instructions:</h3>
+            <p><h4>Step 1</h4> 
+              Preheat oven to 350 degrees F. Grease twelve 2-1/2-inch muffin cups. In a medium bowl combine flours, baking powder, baking soda, and 1/2 teaspoon salt. Set aside.
+              <h4>Step 2</h4>
+                In large bowl combine vegetable oil spread and sugar blend. Beat with electric mixer on medium speed about 3 minutes or until fluffy. Add eggs, buttermilk, and the water, 
+                beating until well mixed. Add flour mixture, beating on low speed just until blended, being careful not to overmix. Divide batter between two bowls. Stir vanilla into one bowl of the batter. 
+                Stir melted chocolate into the other bowl of the batter.
+                <h4>Step 3</h4>
+                Spoon vanilla batter into one side of each of the prepared muffin cups. Spoon chocolate batter into the other side of each muffin cup, filling the cups two-thirds full. If desired, sprinkle semisweet
+                 chocolate pieces over the vanilla batter and white baking pieces over the chocolate batter. Fill any empty cups with water to prevent warping while baking.
+                <h4>Step 4</h4>
+                Bake for 15 to 17 minutes or until a toothpick inserted in centers comes out clean. Cool in muffin cups on a wire rack for 5 minutes. Remove from muffin cups; serve warm.
+               
+            </p>
+          </div>
+        </div>
+    
+      </div>
+
+      <div data-role="page" id="mbb-page">
+        <a class="back-btn" href="#recipes-page"><i class="fa fa-angle-left"></i></a>
+      
+        <header class="instruction-header">
+          <h1>Mexican Breakfast Burrito</h1>
+        </header>
+      
+        <div class="instruction-section">
+          <div class="ingredients-container">
+            <h3>Ingredients:</h3>
+            <ul>
+              <li>1 cup canned black beans, rinsed and drained</li>
+              <li>⅓ cup bottled chunky salsa</li>
+              <li>4 eggs</li>
+              <li>2 tablespoons milk</li>
+              <li>¼ teaspoon black pepper</li>
+              <li>⅛ teaspoon salt</li>
+              <li>Nonstick cooking spray or cooking oil</li>
+              <li>1 medium tomato, thinly sliced</li>
+              <li>½ cup crumbled queso fresco cheese or shredded Monterey Jack cheese (2 ounces)</li>
+              <li>¼ cup dairy sour cream</li>
+              <li>4 teaspoons snipped fresh mint</li>
+              <li>Bottled chunky salsa (optional)</li>
+            </ul>
+          </div>
+      
+          <div class="instructions-container">
+            <h3>Instructions:</h3>
+            <p><h4>Step 1</h4>
+              In a small saucepan mash the beans slightly. Stir in the ⅓ cup salsa. Heat through over low heat. Cover and keep warm while making egg tortillas.
+              <h4>Step 2</h4>
+                In a medium bowl beat eggs with a whisk; whisk in milk, pepper, and salt. Coat an unheated 10-inch nonstick omelet pan (or skillet with flared sides) with nonstick cooking spray, 
+                or brush lightly with a little cooking oil. Preheat pan over medium heat until a drop of water sizzles.
+                <h4>Step 3</h4>
+                For each egg tortilla, pour about ¼ cup of the egg mixture into the pan. Lift and tilt pan to spread egg mixture over bottom. Return to heat. Cook for 1- ½ to 2 minutes or until 
+                lightly browned on bottom (do not turn).
+                <h4>Step 4</h4>
+                Loosen edges of the egg tortilla with spatula; carefully slide out onto a serving plate, browned side down. On one half of the tortilla, spread one-fourth of the bean-salsa mixture. 
+                Top with tomato and cheese. Fold in half and then into quarters to form the burritos. Cover with foil and keep warm while preparing remaining tortillas and assembling remaining burritos. 
+                Top with sour cream and the remaining cheese; sprinkle with mint. If desired, serve with additional salsa.
+                
+            </p>
+          </div>
+        </div>
+      
+      </div>
+
+      <div data-role="page" id="se-page">
+        <a class="back-btn" href="#recipes-page"><i class="fa fa-angle-left"></i></a>
+        
+        <header class="instruction-header">
+          <h1>BMT Scrambled Eggs</h1>
+        </header>
+        
+        <div class="instruction-section">
+          <div class="ingredients-container">
+            <h3>Ingredients:</h3>
+            <ul>
+              <li>Nonstick cooking spray</li>
+              <li>1/2 cup sliced fresh mushrooms</li>
+              <li>1/4 cup thinly sliced green onions</li>
+              <li>1 teaspoon cooking oil</li>
+              <li>1 8 - ounce carton refrigerated or frozen egg product, thawed, or 4 eggs, beaten</li>
+              <li>1/4 cup fat-free milk</li>
+              <li>1/8 teaspoon ground black pepper</li>
+              <li>1/2 cup shredded reduced-fat cheddar cheese (2 ounces) or 1/4 cup crumbled feta or blue cheese (2 ounces)</li>
+              <li>1 slice turkey bacon or bacon, crisp-cooked and crumbled</li>
+              <li>8 grape or cherry tomatoes, halved</li>
+            </ul>
+          </div>
+        
+          <div class="instructions-container">
+            <h3>Instructions:</h3>
+            <p><h4>Step 1</h4>
+              Coat an unheated large nonstick skillet with nonstick cooking spay. Preheat skillet over medium heat. Add mushrooms and green onions. 
+              Cook and stir for 5 to 7 minutes or until vegetables are tender. Stir in oil.
+              <h4>Step 2</h4>
+                In a medium bowl, stir together egg, milk, and pepper. Pour egg mixture into skillet. Cook, without stirring, until mixture begins to set on the bottom 
+                and around edge. Using a large spoon or spatula, lift and fold partially cooked egg mixture so uncooked portion flows underneath.
+                <h4>Step 3</h4>
+                Sprinkle with cheese and bacon. Continue cooking over medium heat for 2 to 3 minutes or until egg mixture is cooked through but is still glossy and moist. 
+                Remove from heat immediately. (Be careful not to overcook the egg mixture.)
+                <h4>Step 4</h4>
+                To serve, top with tomatoes. Makes 4 (2/3 cup) servings.
+               
+                  
+            </p>
+          </div>
+        </div>
+        
+      </div>
+
+      <div data-role="page" id="sbt-page">
+        <a class="back-btn" href="#recipes-page"><i class="fa fa-angle-left"></i></a>
+          
+        <header class="instruction-header">
+          <h1>Southwestern Breakfast Tostadas</h1>
+        </header>
+          
+        <div class="instruction-section">
+          <div class="ingredients-container">
+            <h3>Ingredients:</h3>
+            <ul>
+              <li>2 6 - inches corn tortillas</li>
+              <li>1/2 cup canned black beans, rinsed and drained</li>
+              <li>2 eggs or 1/2 cup refrigerated or frozen egg product, thawed</li>
+              <li>1 tablespoon fat-free milk</li>
+              <li>1/8 teaspoon black pepper</li>
+              <li>Dash salt</li>
+              <li>Nonstick cooking spray</li>
+              <li>1/2 cup chopped tomato</li>
+              <li>2 tablespoons crumbled queso fresco or shredded Monterey Jack cheese</li>
+              <li>2 teaspoons snipped fresh cilantro</li>
+              <li>Purchased chunky salsa (optional)</li>
+            </ul>
+          </div>
+          
+          <div class="instructions-container">
+            <h3>Instructions:</h3>
+            <p><h4>Step 1</h4>
+              Warm tortillas according to package directions. Meanwhile, in a small bowl use a potato masher or fork to slightly mash beans; set aside. In another small bowl or 
+              1-cup glass measure combine eggs, milk, pepper, and salt. Beat with a wire whisk or rotary beater.
+              <h4>Step 2</h4>
+                Lightly coat an unheated medium nonstick skillet with nonstick cooking spray. Preheat over medium heat. Pour egg mixture into hot skillet. Cook, without stirring,
+                 until egg mixture begins to set. Run a spatula around edge of skillet, lifting egg mixture so that the uncooked portion flows underneath. Continue cooking about 2 minutes 
+                 more or until egg mixture is cooked through but is still glossy and moist. Remove from heat.
+                 <h4>Step 3</h4>
+                Spread tortillas with mashed beans. Divide cooked egg mixture between tortillas. Top with tomato, cheese, and cilantro. If desired, top with salsa. Serve immediately. Makes 2 servings.
+               
+                    
+            </p>
+          </div>
+        </div>
+          
+      </div>
+
+      <div data-role="page" id="re-page">
+        <a class="back-btn" href="#recipes-page"><i class="fa fa-angle-left"></i></a>
+          
+        <header class="instruction-header">
+          <h1>Ranch Eggs</h1>
+        </header>
+          
+        <div class="instruction-section">
+          <div class="ingredients-container">
+            <h3>Ingredients:</h3>
+            <ul>
+              <li>Nonstick cooking spray</li>
+              <li>1 large onion, halved and thinly sliced</li>
+              <li>1 14 1/2 - ounce can diced tomatoes, drained</li>
+              <li>1 fresh jalapeno chile pepper, seeded and chopped*</li>
+              <li>1 clove garlic, minced</li>
+              <li>1/2 teaspoon chili powder</li>
+              <li>6 eggs</li>
+              <li>1/4 teaspoon salt</li>
+              <li>1/8 teaspoon black pepper</li>
+              <li>1/3 cup reduced-fat shredded Monterey Jack or cheddar cheese</li>
+              <li>1 tablespoon snipped fresh cilantro</li>
+              <li>6 6 - inches corn tortillas, warmed according to package directions (optional)</li>
+            </ul>
+          </div>
+          
+          <div class="instructions-container">
+            <h3>Instructions:</h3>
+            <p> <h4>Step 1</h4>
+              Coat an unheated large ovenproof skillet with nonstick cooking spray. Preheat skillet over medium-high heat. Add onion to hot skillet. Cook about 5 minutes or until tender, stirring occasionally. Remove from heat.
+              <h4>Step 2</h4>
+                Meanwhile, in a small bowl stir together drained tomatoes, chile pepper, garlic, and chili powder. Pour tomato mixture over onion in skillet; spread evenly. Break one of the eggs into a measuring cup or custard cup. Carefully 
+                slide egg onto tomato mixture. Repeat with remaining eggs, spacing eggs as evenly as possible. Sprinkle eggs with salt and black pepper.
+                <h4>Step 3</h4>
+                Bake, uncovered, in a 400 degree oven about 20 minutes or until eggs are set. Remove from oven. Sprinkle with cheese; let stand for 5 minutes. Sprinkle with cilantro. If desired, serve with warmed tortillas. Makes 6 servings.
+               
+                    
+            </p>
+          </div>
+        </div>
+          
+      </div>
+
+      <div data-role="page" id="pps-page">
+        <a class="back-btn" href="#recipes-page"><i class="fa fa-angle-left"></i></a>
+          
+        <header class="instruction-header">
+          <h1>Pumpkin Pie Smoothie</h1>
+        </header>
+          
+        <div class="instruction-section">
+          <div class="ingredients-container">
+            <h3>Ingredients:</h3>
+            <ul>
+              <li>1 medium frozen banana</li>
+              <li>½ cup unsweetened almond milk or other nut milk</li>
+              <li>⅓ cup plain whole-milk Greek yogurt</li>
+              <li>⅓ cup canned pumpkin puree</li>
+              <li>⅛ teaspoon pumpkin pie spice</li>
+              <li>1-2 teaspoons pure maple syrup</li>
+            </ul>
+          </div>
+          
+          <div class="instructions-container">
+            <h3>Instructions:</h3>
+            <p><h4>Step 1</h4>
+              Place banana, almond milk (or other nut milk), yogurt, pumpkin puree, pumpkin pie spice and maple syrup in a blender. Blend until smooth.
+                    
+            </p>
+          </div>
+        </div>
+          
+      </div>
+
+      <div data-role="page" id="bas-page">
+        <a class="back-btn" href="#recipes-page"><i class="fa fa-angle-left"></i></a>
+            
+        <header class="instruction-header">
+          <h1>Berry-Almond Smoothie Bowl</h1>
+        </header>
+            
+        <div class="instruction-section">
+          <div class="ingredients-container">
+            <h3>Ingredients:</h3>
+            <ul>
+              <li>⅔ cup frozen raspberries</li>
+              <li>½ cup frozen sliced banana</li>
+              <li>½ cup plain unsweetened almond milk</li>
+              <li>5 tablespoons sliced almonds, divided</li>
+              <li>¼ teaspoon ground cinnamon</li>
+              <li>⅛ teaspoon ground cardamom</li>
+              <li>⅛ teaspoon vanilla extract</li>
+              <li>¼ cup blueberries</li>
+            </ul>
+          </div>
+            
+          <div class="instructions-container">
+            <h3>Instructions:</h3>
+            <p><h4>Step 1</h4>
+              Blend raspberries, banana, almond milk, 3 tablespoons almonds, cinnamon, cardamom and vanilla in a blender until very smooth.
+              <h4>Step 2</h4>
+              Pour the smoothie into a bowl and top with blueberries, the remaining 2 tablespoons almonds and coconut.
+                      
+            </p>
+          </div>
+        </div>
+            
+      </div>
+  
+      <div data-role="page" id="mgs-page">
+        <a class="back-btn" href="#recipes-page"><i class="fa fa-angle-left"></i></a>
+            
+        <header class="instruction-header">
+          <h1>Mango-Ginger Smoothie</h1>
+        </header>
+            
+        <div class="instruction-section">
+          <div class="ingredients-container">
+            <h3>Ingredients:</h3>
+            <ul>
+              <li>½ cup cooked red lentils (see Tips), cooled</li>
+              <li>1 cup frozen mango chunks</li>
+              <li>¾ cup carrot juice</li>
+              <li>1 teaspoon chopped fresh ginger</li>
+              <li>1 teaspoon honey</li>
+              <li>Pinch of ground cardamom, plus more for garnish</li>
+              <li>3 ice cubes</li>
+            </ul>
+          </div>
+            
+          <div class="instructions-container">
+            <h3>Instructions:</h3>
+            <p><h4>Step 1</h4>
+              Place lentils, mango, carrot juice, ginger, honey, cardamom and ice cubes in a blender. Blend on high until very smooth, 2 to 3 minutes. Garnish with more cardamom, if desired.
+                      
+            </p>
+          </div>
+        </div>
+            
+      </div>
+
+      <div data-role="page" id="mgl-page">
+        <a class="back-btn" href="#recipes-page"><i class="fa fa-angle-left"></i></a>
+            
+        <header class="instruction-header">
+          <h1>Mixed Greens with Lentils & Sliced Apple</h1>
+        </header>
+            
+        <div class="instruction-section">
+          <div class="ingredients-container">
+            <h3>Ingredients:</h3>
+            <ul>
+              <li>1½ cups mixed salad greens</li>
+              <li>½ cup cooked lentils</li>
+              <li>1 apple, cored and sliced, divided</li>
+              <li>1½ tablespoons crumbled feta cheese</li>
+              <li>1 tablespoon red-wine vinegar</li>
+              <li>2 teaspoons extra-virgin olive oil</li>
+            </ul>
+          </div>
+            
+          <div class="instructions-container">
+            <h3>Instructions:</h3>
+            <p><h4>Step 1</h4>
+              Top greens with lentils, about half the apple slices and the feta. Drizzle with vinegar and oil. Serve with the remaining apple slices on the side.
+                      
+            </p>
+          </div>
+        </div>
+            
+      </div>
+  
+      <div data-role="page" id="cqb-page">
+        <a class="back-btn" href="#recipes-page"><i class="fa fa-angle-left"></i></a>
+            
+        <header class="instruction-header">
+          <h1>Chickpea & Quinoa Buddha Bowl</h1>
+        </header>
+            
+        <div class="instruction-section">
+          <div class="ingredients-container">
+            <h3>Ingredients:</h3>
+            <ul>
+              <li>1 cup cooked quinoa</li>
+              <li>⅓ cup canned chickpeas, rinsed and drained</li>
+              <li>½ cup cucumber slices</li>
+              <li>½ cup cherry tomatoes, halved</li>
+              <li>¼ avocado, diced</li>
+              <li>3 tablespoons hummus</li>
+              <li>1 tablespoon finely chopped roasted red pepper</li>
+              <li>1 tablespoon lemon juice</li>
+              <li>1 tablespoon water, plus more if desired</li>
+              <li>1 teaspoon chopped fresh parsley (optional)</li>
+              <li>Pinch of salt</li>
+              <li>Pinch of ground pepper</li>
+            </ul>
+          </div>
+            
+          <div class="instructions-container">
+            <h3>Instructions:</h3>
+            <p><h4>Step 1</h4>
+              Arrange quinoa, chickpeas, cucumbers, tomatoes and avocado in a wide bowl.
+              <h4>Step 2</h4>
+              Stir hummus, roasted red pepper, lemon juice and water in a bowl. Add more water to reach desired consistency for dressing.
+               Add parsley, salt and pepper and stir to combine. Serve with the Buddha bowl.
+              
+                      
+            </p>
+          </div>
+        </div>
+            
+      </div> 
+
+      <!-- http://jquerymobile.com/download/ -->
+      <script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
+      <script src="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+      <script src="js/main.js"></script>
+
+    </body>
+</html>

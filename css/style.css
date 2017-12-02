@@ -1,0 +1,444 @@
+@import url('https://fonts.googleapis.com/css?family=Orbitron:900');
+
+html, body {
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+/* Sidebar Navigation */
+.sidebar {
+    background: rgba(255, 255, 255, 1); /* rgba(185, 178, 178) */
+    width: 500px;
+    height: 100vh;
+    display: block;
+    position: absolute;
+    top: 0px;
+    left: -500px;
+    transition: left 0.3s linear;
+    z-index: 100;
+}
+
+.sidebar.visible {
+    left: 0px;
+    transition: left 0.3s linear;
+}
+
+.sidebar .profile {
+    height: 100px;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: block;
+    text-align: center;
+    padding: 12px 0px 10px 0px;
+    border-bottom: 1px solid #8D929B;
+}
+
+#profile-pic img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+}
+
+.sidebar ul {
+    margin: 0px;
+    padding: 0px;
+}
+
+.sidebar ul li {
+    list-style: none;
+}
+
+#logout-btn {
+    position: absolute;
+    bottom: 0;
+}
+
+.sidebar ul li a {
+    text-decoration: none;
+    color: #000 !important;
+    font-size: 25px;
+    border-bottom: 1px solid #8D929B;
+    display: block;
+    width: 480px;
+    padding: 10px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    text-align: center;
+}
+
+.sidebar ul li a:hover {
+    color: #5d7caf;
+}
+
+.sidebar-btn {
+    display: inline-block;
+    vertical-align: middle;
+    width: 20px;
+    height: 15px;
+    cursor: pointer;
+    margin: 10px 20px 20px 20px;
+    position: absolute;
+    top: 0px;
+    right: -70px;
+    padding: 10px;
+    border-radius: 50%;
+}
+
+.sidebar-btn .btn {
+    height: 2px;
+    border-radius: 20%;
+    background: rgba(97, 83, 83, 0.9);
+    margin-bottom: 5px;
+    display: block;
+}
+
+/* ------------------------------------- PROFILE PAGE ------------------------------------- */
+#profile-page {
+    overflow: hidden;
+}
+
+.profile-header {
+    padding: 40px 0 20px 0;
+}
+
+.profile-nav {
+    padding: 10px 0px 10px 0px;
+}
+
+.profile-home-btn {
+    font-size: 15px;
+    margin-left: 30px;
+    color: rgba(97, 83, 83, 0.9) !important;
+    text-decoration: none;
+}
+
+.profile-browse-btn {
+    font-size: 15px;
+    color: rgba(97, 83, 83, 0.9) !important;
+    text-decoration: none;
+    float: right;
+    margin-right: 20px;
+}
+
+#profile-header-pic img{
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    display: block;
+    margin: 0 auto;
+}
+
+/**/
+.profile-form {
+    width: 200px;
+    margin: 0 auto;
+}
+
+.profile-form a {
+    margin-left: 40px;
+}
+
+.edit-profile-container {
+    width: 500px;
+    padding: 10px;
+}
+
+.profile-about {
+    text-align: center;
+    line-height: 8px;
+    color: #707275;
+}
+
+.profile-info-container {
+    width: 95%;
+    margin: auto;
+}
+
+.profile-info-container h5{
+    margin-left: 10px;
+}
+
+/* ------------------------------------- LOGIN PAGE ------------------------------------- */
+.login-container {
+    width: 350px;
+    height: 500px;
+    margin: auto;
+    padding-top: 30px;
+    margin-top: 20px;
+}
+
+.brand-logo {
+    width: 90%;
+    margin: auto;
+    height: 100px;
+}
+
+.brand-logo h1 {
+    text-align: center;
+    font-size: 50px;
+    font-family: 'Orbitron', sans-serif;    
+}
+
+.login-input {
+    margin-top: 30px;
+    padding: 50px 15px 0px 15px;
+    border: 1px solid #c0c5ce;
+    box-shadow: 2px 2px 5px #c3c7cc;
+}
+
+.login-btn {
+    margin: 20px 0px 50px 0px;
+}
+
+/* ------------------------------------- LANDING PAGE ------------------------------------- */
+#landing-page {
+    background: url("https://images.pexels.com/photos/349609/pexels-photo-349609.jpeg?w=940&h=650&dpr=2&auto=compress&cs=tinysrgb") no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+/* Welcome Container */
+.welcome-container {
+    width: 500px;
+    height: 500px;
+    background-color: rgba(0, 0, 0, 0.5);
+    margin: auto;
+}
+
+.landing-pic-container {
+    padding-top: 40px;
+}
+
+#landing-pic img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    display: block;
+    margin: 0 auto;
+}
+
+.welcome-container h1 {
+    text-align: center;
+    color: #fff;
+    font-size: 40px;
+}
+
+.welcome-container h3 {
+    text-align: center;
+    margin-top: 100px;
+    padding: 30px;
+}
+
+.welcome-container h3 a {
+    color: #fff !important;
+    text-decoration: none;
+}
+
+#go-to-recipes {
+    margin-top: -50px;
+}
+
+/* -- Redesign -- */
+.create-profile-btn {
+    width: 120px;
+    margin: 0 auto;
+    margin-top: 100px;
+    margin-bottom: 30px;
+    border-radius: 5px;
+    box-shadow: 5px 5px 50px;
+}
+
+/* ------------------------------------- RECIPES PAGE ------------------------------------- */
+.recipe-header {
+    border-bottom: 1px solid #000;
+}
+
+.recipe-header h1{
+    text-align: center;
+}
+
+.showrecipe-container {
+    margin: auto;
+    width: 600px;
+    height: 200px;
+    border: 1px solid #c0c5ce;
+    margin-top: 10px;
+}
+
+.showrecipe-container a {
+    display: block;
+}
+
+.recipe-box-one {
+    margin-top: 20px;
+}
+
+.recipe-description a img {
+    width: 250px;
+    height: 200px;
+    float: left;
+}
+
+.recipe-description h3, p {
+    margin: 0;
+}
+
+.recipe-description h3 {
+    text-align: center;
+}
+
+.recipe-description p {
+    overflow: hidden;
+    text-align: center;
+}
+
+.view-recipe {
+    text-decoration: none;
+    text-align: center;
+}
+
+.back-btn {
+    font-size: 60px;
+    margin-left: 30px;
+    color: rgba(97, 83, 83, 0.9) !important;
+    position: absolute;
+}
+
+/* ------------------------------------- RECIPES INSTRUCTIONS PAGE ------------------------------------- */
+.instruction-header {
+    margin-top: 20px;
+    margin-bottom: 30px;
+}
+
+.instruction-header h1 {
+    text-align: center;
+}
+
+.instruction-section {
+    width: 800px;
+    border: 1px solid #c0c5ce;
+    margin: auto;
+    margin-top: 20px;
+    margin-bottom: 50px;
+    padding: 0px 5px 20px 5px;
+    box-shadow: 5px 5px 50px;
+}
+
+.instruction-section h3, p, h4 {
+    margin-left: 10px;
+}
+
+/* ------------------------------------- MEDIA QUERIES ------------------------------------- */
+/* Mobile Responsive */
+@media (max-width: 480px) {
+    /* Login Page */
+    .login-container {
+        width: 90%;
+    }
+}
+
+@media (max-width: 560px) {
+    /* Sidebar Navigation */
+    .sidebar {
+        width: 80%;
+        left: -80%;
+    }
+
+    .sidebar ul li a {
+        width: auto;
+    }
+
+    /* Welcome Section */
+    .welcome-container {
+        width: 95%;
+        height: auto;
+    }
+
+    .welcome-container h1 {
+        font-size: 35px;
+    }
+
+    .welcome-container h3 {
+        padding-bottom: 80px;
+    }
+
+    /* Profile Page*/
+    .edit-profile-container {
+        width: auto;
+    }
+
+    /* Recipes Page */
+    .showrecipe-container {
+        margin: auto;
+        width: auto;
+        height: 100px;
+        border: 1px solid #c0c5ce;
+        margin-top: 10px;
+    }
+    
+    .recipe-box-one {
+        margin-top: 20px;
+    }
+    
+    .recipe-description a img {
+        width: 150px;
+        height: 100px;
+        float: left;
+    }
+    
+    .recipe-description h3, p {
+        margin: 0;
+    }
+    
+    .recipe-description h3 {
+        font-size: 15px;
+        text-align: center;
+    }
+    
+    .recipe-description p {
+        font-size: 10px;
+        overflow: hidden;
+    }
+
+    .view-recipe {
+        font-size: 15px;
+    }
+}
+
+@media (max-width: 800px) {
+    /* Profile Page */
+    .profile-home-btn {
+        font-size: 10px;
+        margin-left: 20px;
+        color: rgba(97, 83, 83, 0.9) !important;
+        text-decoration: none;
+    }
+    
+    .profile-browse-btn {
+        font-size: 10px;
+        color: rgba(97, 83, 83, 0.9) !important;
+        text-decoration: none;
+        float: right;
+        margin-right: 15px;
+        margin-top: 5px;
+    }
+
+    /* Instructions Page */
+    .back-btn {
+        font-size: 40px;
+        margin-top: 11px;
+    }
+
+    .instruction-header h1{
+        font-size: 30px;
+        width: 75%;
+        margin: 0 auto;
+    }
+
+    .instruction-section {
+        width: auto;
+    }
+}
